@@ -3,9 +3,19 @@ require(['jquery', 'modules/createModule'], function(){
 	$(document).ready(function(event){
 
 		jw.createModule('popUps', {
+			title: 'JayaVarma.com',
+			content: '<img src="images/work_jv_full.png" class="img_work_lrg" alt=" " title="">' +
+				'<div class="popUp_content">' +
+					'<p>Personal site for florida based violinist, Jaya Varma.</p>' +
+					'<a href="http://www.jayavarma.com" class="extLink">View Site</a>' +
+				'</div>',
+			target: document.getElementById('popUp_jvSite')
+		});
+
+		jw.createModule('popUps', {
 			title: 'SolarWinds Win32 Application Design',
 			content: '<img src="images/work_sw_freeTool_full01.png" class="img_work_lrg" alt=" " title="">' +
-				'<div class="popUp_content">' + 
+				'<div class="popUp_content">' +
 					'<p>This is an example of the new layout I developed for SolarWinds\' free tool marketing campaigns. The interface is for WPF built Win32 applications.</p>' +
 				'</div>',
 			target: document.getElementById('popUp_sw')
@@ -61,7 +71,7 @@ require(['jquery', 'modules/createModule'], function(){
 				'</div>',
 			target: document.getElementById('popUp_cc')
 		});
-	
+
 		jw.createModule('popUps', {
 			title: 'Back and Forth',
 			content: '<img src="images/work_bandf_full01.jpg" class="img_work_lrg" alt=" " title="">' +

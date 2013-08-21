@@ -559,6 +559,36 @@ p:last-child {
 	margin:0;
 }
 
+#latestProject {
+	margin: 0 0 50px;
+}
+
+.screenshot {
+	background:#ffffff;
+	border: 10px solid #fff;
+	margin: 0 20px 12px 0;
+	overflow: hidden;
+}
+
+.screenshot img, .screenshot a {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+@media only screen and (min-device-width: 480px), only screen and (min-width: 480px){
+
+.screenshot {
+	height: 480px;
+}
+
+.screenshot:hover {
+	transition: .2s;
+	height: 735px;
+}
+
+}
+
 #recentWork {
 	margin:0 0 50px;
 	overflow:hidden;
@@ -640,7 +670,7 @@ form {
 }
 
 #form_contact {
-	
+
 }
 
 form input {
@@ -689,7 +719,7 @@ form input .error, form textarea .error {
 	color:#393C34;
 	padding:0;
 	cursor:pointer;
-	
+
 	border-radius:4px;
 	-moz-border-radius:3px;
 	-webkit-border-radius:3px;
@@ -714,11 +744,11 @@ form input .error, form textarea .error {
 	color:#393C34;
 	display:none;
 	padding: 1em;
-	
+
 	box-shadow: 0 0 11px #333;
 	-moz-box-shadow: 0 0 11px #333;
 	-webkit-box-shadow: 0 0 11px #333;
-	
+
 	border-radius:7px; /* Keep all 3 declartions to make up for poor IE9 rendering */
 	-moz-border-radius:6px;
 	-webkit-border-radius:6px;
@@ -808,7 +838,7 @@ ul.list_form li button.button {
 		background:#211E1B url(../images/bg_main.jpg) 0 0 no-repeat;
 		font-size:100%;
 	}
-	
+
 	h1 {
 		width:100%;
 		padding:0;
@@ -816,17 +846,17 @@ ul.list_form li button.button {
 		background-image:url(../images/title_sml.png);
 		min-height:120px;
 	}
-	
+
 	p {
-		
+
 	}
-	
+
 	#container {
 		width:100%;
 		margin:0;
 		padding:0;
 	}
-	
+
 	#content {
 		width:90%;
 		margin:0;
@@ -836,30 +866,30 @@ ul.list_form li button.button {
 	img.justin {
 		display:none;
 	}
-	
+
 	.text {
 		margin:0 0 25px;
 		padding:0;
 		width:100%;
 	}
-	
+
 	#recentWork {
 		margin:0 0 25px;
 		padding:0;
 		width:100%;
 	}
-	
+
 	.recentWork_item {
 		width:38%;
 		height:100%;
 		padding:3%;
 		margin:3%;
 	}
-	
+
 	.recentWork_item img {
 		width:100%;
 	}
-	
+
 	ul.list_form li label {
 		float:none;
 		padding:0;
@@ -868,26 +898,26 @@ ul.list_form li button.button {
 		text-align:right;
 		line-height:1.8em;
 	}
-	
+
 	ul.list_form li input, ul.list_form li textarea {
 		width:100%;
 	}
-	
+
 	ul.list_form li button.button {
 		margin:0;
 	}
-	
+
 	.popUp {
 		width:80%!important;
 		padding:5%!important;
 		margin:5%!important;
 		left:0!important;
 	}
-	
+
 	.popUp img {
 		width:100%;
 	}
-	
+
 	.popUp p {
 		text-shadow:none;
 	}
