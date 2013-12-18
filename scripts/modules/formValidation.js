@@ -103,7 +103,7 @@ jw.formValidation = {
         email = $form.find('#email').val(),
         message = $form.find('#message').val();
 
-			if (!that.validateForm()) {
+			if (!that.doValidation()) {
         return false;
       } else {
         $.ajax({
