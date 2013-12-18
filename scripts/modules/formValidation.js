@@ -52,14 +52,14 @@ jw.formValidation = {
 				highlightError();
 				return false
 			}
-			
+
 			if (str.indexOf(" ")!=-1){
 				highlightError();
 				return false
 
 			}
 
-			return true;				
+			return true;
 		}
 
 		var $name = this.$myForm.find('#name'),
@@ -72,7 +72,7 @@ jw.formValidation = {
 			$email.addClass('error');
 			$('#emailRequired').show();
 			$email.focus();
-			
+
 			return false;
 		}else{
 			$email.removeClass('error');
@@ -89,7 +89,7 @@ jw.formValidation = {
 			$math.removeClass('error');
 		}
 
-		return true;	
+		return true;
 	},
 
 	_addListeners: function(){
@@ -98,28 +98,30 @@ jw.formValidation = {
 		this.$myForm.bind('submit', function(event){
 			event.preventDefault();
 
-			//console.log('submit form', that.$myForm);
+			var $form = $(this),
+        name = $form.find('#name').val(),
+        email = $form.find('#email').val(),
+        message = $form.find('#message').val();
 
-			if(that.doValidation()){
-				//console.log('hooray, form validates');
-				
-				var formSubmitDefer = $.ajax({
-					method: 'POST',
-					url: $(this).attr('action'),
-					data: $(this).serialize(),
-					success: function(data){
-						//console.log('success', data);
-
-						if(data !== 'error'){
-							that.$myForm.remove();
-							$('#form_contact_thanks').show();
-						}
-					},
-					error: function(data){
-						//console.log('error', data)
-					}
-				});
-			}
+			if (!that.validateForm()) {
+        return false;
+      } else {
+        $.ajax({
+          url: '/mail',
+          type: 'POST',
+          data: {
+            domain: 'jwindesign.com',
+            to: 'justin@jwin.me',
+            from: name + ' <' + email + '>',
+            subject: 'jwindesign.com Contact Form | From: ' + name,
+            text: message
+          },
+          success: function(data){
+            $form.remove();
+						$('#form_contact_thanks').show();
+          }
+        });
+      }
 		});
 	},
 
